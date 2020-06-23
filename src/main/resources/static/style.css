@@ -9,12 +9,17 @@ h1 {
     text-align: center;
     font-size: 4rem;
 }
+.block-total {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .block {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    background-color: black;
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
@@ -45,4 +50,11 @@ p {
 }
 h2 {
     margin-bottom: 2rem;
+}
+
+form {
+    margin-top: 3rem;
+}
+form input {
+    width: 30rem;
 }

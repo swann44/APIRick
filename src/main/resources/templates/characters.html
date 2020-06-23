@@ -9,21 +9,23 @@
 <header>
     <h1>The Rick and Morty API</h1>
 </header>
-<form method="get" action="/charactersName">
-    <input type="search" name="name" placeholder="Search by name">
-</form>
-<div class="block">
-    <div class="character" th:each="entry : ${characters}" th:with="episode=${entry.value}, character=${entry.key}">
-        <img th:src="${character.getImage()}" th:alt="${character.getName()}">
-        <div class="text">
-            <h2 th:text="${character.getName()}"></h2>
-            <p th:text="|${character.getStatus()} - ${character.getSpecies()} - ${character.getGender()}|"></p>
-            <p>Last known location:</p>
-            <h4 th:text="${character.getLocation().getName()}"></h4>
-            <p>Origin planet:</p>
-            <h4 th:text="${character.getOrigin().getName()}"></h4>
-            <p>First seen in :</p>
-            <h4 th:text="${episode}"></h4>
+<div class="block-total">
+    <form method="get" action="/charactersName">
+        <input type="search" name="name" placeholder="Search by name">
+    </form>
+    <div class="block">
+        <div class="character" th:each="entry : ${characters}" th:with="episode=${entry.value}, character=${entry.key}">
+            <img th:src="${character.getImage()}" th:alt="${character.getName()}">
+            <div class="text">
+                <h2 th:text="${character.getName()}"></h2>
+                <p th:text="|${character.getStatus()} - ${character.getSpecies()} - ${character.getGender()}|"></p>
+                <p>Last known location:</p>
+                <h4 th:text="${character.getLocation().getName()}"></h4>
+                <p>Origin planet:</p>
+                <h4 th:text="${character.getOrigin().getName()}"></h4>
+                <p>First seen in :</p>
+                <h4 th:text="${episode}"></h4>
+            </div>
         </div>
     </div>
 </div>
